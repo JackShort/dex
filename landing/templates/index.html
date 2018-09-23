@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %} R3TR0 {% endblock %}</title>
+</head>
+
+<body>
+    {% block pagecontent %}
+
+  <div class="jumbotron">
+    <div class="container">
+
+      <img src="{% static 'images/logo.png' %}" alt="Beanstalk Logo" class="logo">
+      <div class="divider"></div>
+      
+      <h2>No privacy loss. No invasive ads.
+        <br> All your sites.</h2>
+    </div>
+  </div>
+
+  <div class="container content our-farms">
+
+    <h1>We've designed a new farm</h1>
+
+    <div class="row">
+      <div class="col-md-4">
+        <img src="images/indoorFarming.png">
+        <h3>Grown Indoors</h3>
+        <p>It’s always 65º and sunny in our farms. We use broad spectrum LED light to mimic the sun and save energy. Plants
+          are stacked in layers, each layer with its own light, climate control, and nutrient system.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="images/heirloom.png">
+        <h3>Healthy for us & the planet</h3>
+        <p>We grow heirloom seeds using only clean water, organic fertilizer, and light. No pesticides or preservatives needed.
+          We use 95% less water, have no chemical runoff, and cut down on emmissions by growing locally.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <img src="images/automation.png">
+        <h3>Automated & affordable</h3>
+        <p>Robots handle the labor intensive tasks, which creates a safe and efficient growing process. As a result, we grow
+          the highest quality and safest produce at volumes and prices competitive with field agriculture. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron callout">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h1>Zero</h1>
+          <p>Pesticides, Herbicides, or Fungicides</p>
+        </div>
+        <div class="col-md-4">
+          <h1>95%</h1>
+          <p>Less Water</p>
+        </div>
+        <div class="col-md-4">
+          <h1>100 mi</h1>
+          <p>From our farm to our farthest customers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="images/brothers.png" class="img-fluid" alt="Founders Jack Ross (left) and Mike Ross (right)"> </div>
+      <div class="col-md-7 offset-md-1">
+        <h1 style="padding-top:1.5rem;">Family Owned & Engineering Led</h1>
+        <p style="padding-top:1rem;">Our mission is to create a sustainable abundance of nutricious food through technological advancements in growing
+          and harvesting. We are engineers, builders, and operators who love fresh, healthy food.
+          <br>
+          <br> Founded by brothers, Jack and Michael Ross, Beanstalk is family business with operations in the brothers’ home
+          state of Virginia with sights set on expanding quickly arround the world. </p>
+      </div>
+    </div>
+
+    <!-- NEWS -->
+    <div class="news">
+      <h1> Beanstalk in the news</h1>
+      <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+          <div class="carousel-item col-md-4 active">
+            <div class="news-item">
+              <a href="https://news.darden.virginia.edu/2018/05/01/founders-indoor-farming-startup-beanstalk-still-growing-after-y-combinator/">
+                <img src="images/UVA.png">
+                <p>01 May 2018</p>
+                <h3>UVA i.Lab-Supported Indoor Farming Startup Beanstalk Still Growing</h3>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item col-md-4">
+            <div class="news-item">
+              <a href="http://www.techcarsmachines.com/y-combinator-beanstalk/">
+                <img src="images/gtk.png">
+                <p>01 May 2018</p>
+                <h3>Tech. Cars. Machines. An Interview with Beanstalk</h3>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item col-md-4">
+            <div class="news-item">
+              <a href="https://techcrunch.com/2018/03/19/here-are-64-startups-that-launched-today-at-y-combinators-w18-demo-day/">
+                <img src="images/TechCrunch.png">
+                <p>22 March 2018</p>
+                <h3>Here are the 64 startups that launched at Y Combinator Demo Day II</h3>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item col-md-4">
+            <div class="news-item">
+              <a href="https://www.governor.virginia.gov/newsroom/all-releases/2018/february/headline-822706-en.html">
+                <img src="images/virginia.png">
+                <p>15 Feb 2018</p>
+                <h3>Governor Ralph Northam Announces 2018 Outstanding STEM Award</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+          <i class="fa fa-chevron-left fa-lg text-muted"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+          <i class="fa fa-chevron-right fa-lg text-muted"></i>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 style="padding: 2rem 0">Want to be a part of the next generation of farms?</h1>
+      <div class="divider"></div>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Join Our Team</h3>
+          <a href="mailto:careers@beanstalk.farm"><p style="text-decoration: underline;">careers@beanstalk.farm</p></a>
+        </div>
+        <div class="col-md-4">
+          <h3>Purchasing</h3>
+          <a href="mailto:sales@beanstalk.farm"><p style="text-decoration: underline;">sales@beanstalk.farm</p></a>
+        </div>
+        <div class="col-md-4">
+          <h3>Contact Us</h3>
+          <a href="mailto:contact@beanstalk.farm"><p style="text-decoration: underline;">contact@beanstalk.farm</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <p style="text-align:center; color: white;">Beanstalk, Inc ©2018</p>
+    </div>
+  </footer>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script js>
+    $('#carouselExample').on('slide.bs.carousel', function (e) {
+
+      /*
+      
+      CC 2.0 License Iatek LLC 2018
+      Attribution required
+      
+      */
+
+      var $e = $(e.relatedTarget);
+      var idx = $e.index();
+      var itemsPerSlide = 3;
+      var totalItems = $('.carousel-item').length;
+
+      if (idx >= totalItems - (itemsPerSlide - 1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i = 0; i < it; i++) {
+          // append slides to end
+          if (e.direction == "left") {
+            $('.carousel-item').eq(i).appendTo('.carousel-inner');
+          }
+          else {
+            $('.carousel-item').eq(0).appendTo('.carousel-inner');
+          }
+        }
+      }
+    });
+  </script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+    {% endblock %}
+</body>
+
+</html>
