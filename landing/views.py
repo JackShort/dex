@@ -8,3 +8,12 @@ class HomePageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = "about.html"
+
+class ContactPageView(TemplateView):
+    template_name = "contact.html"
+
+class LoginPageView(TemplateView):
+    template_name = "login.html"
+
+class SignupPageView(TemplateView):
+    template_name = "signup.html"
