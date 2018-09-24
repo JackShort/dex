@@ -239,7 +239,7 @@ h3 {
 }
 .navbar .navbar-text a:hover,
 .navbar .navbar-text a:focus {
-  color: #ffbbbc; 
+  color: #ffbbbc;
 }
 .navbar .navbar-nav .nav-link {
   color: #ffffff;
@@ -279,7 +279,7 @@ h3 {
 .navbar .navbar-link:hover {
   color: #ffbbbc;
 }
-  
+
 @media (max-width: 575px) {
   .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
     color: #ffffff;
@@ -293,7 +293,7 @@ h3 {
     background-color: #c0392b;
   }
 }
-  
+
 @media (max-width: 767px) {
   .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
     color: #ffffff;
@@ -307,7 +307,7 @@ h3 {
     background-color: #c0392b;
   }
 }
-  
+
 @media (max-width: 991px) {
   .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
     color: #ffffff;
@@ -321,7 +321,7 @@ h3 {
     background-color: #c0392b;
   }
 }
-  
+
 @media (max-width: 1199px) {
   .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
     color: #ffffff;
@@ -335,7 +335,7 @@ h3 {
     background-color: #c0392b;
   }
 }
-  
+
 .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
   color: #ffffff;
 }
@@ -346,4 +346,11 @@ h3 {
 .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
   color: #ffbbbc;
   background-color: #c0392b;
+}
+
+.contact-form .firstname,
+.contact-form .lastname,
+.contact-form .email,
+.contact-form .contact-content {
+	width: 100%;
 }
