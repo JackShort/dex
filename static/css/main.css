@@ -348,9 +348,6 @@ h3 {
   background-color: #c0392b;
 }
 
-.contact-form .firstname,
-.contact-form .lastname,
-.contact-form .email,
-.contact-form .contact-content {
+.fill-col {
 	width: 100%;
 }
