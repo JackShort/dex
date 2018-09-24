@@ -3,6 +3,10 @@ h1, h2, h3, h4, p {
     color: #4A4A4A;
 }
 
+body {
+    background-color: #141414;
+}
+
 .jumbotron {
     background-color:#e02232;
     /* background-color:#00BFA5; */
