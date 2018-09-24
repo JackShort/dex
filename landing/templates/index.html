@@ -5,12 +5,12 @@
 {% block pagecontent %}
     <div class="jumbotron">
         <div class="container">
-            <img src="{% static 'images/lolo.png' %}" alt="Logo" class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
 
             <h2>No privacy loss. No invasive ads.
             <br> All your sites.</h2>
 
-            <button class="signup-btn">JOIN FOR A FREE MONTH</button>
+            <a class="signup-btn" href="{% url 'signup' %}">JOIN FOR A FREE MONTH</a>
         </div>
     </div>
 
