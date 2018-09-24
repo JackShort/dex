@@ -4,9 +4,9 @@ h1, h2, h3, h4, p {
 }
 
 .jumbotron {
-    /* background-color:#e02232; */
+    background-color:#e02232;
     /* background-color:#00BFA5; */
-    background-color:#7C4DFF;
+    /* background-color:#7C4DFF; */
     /* background-color:#bd93f9; */
     padding-top: 10rem;
     padding-bottom: 10rem;
