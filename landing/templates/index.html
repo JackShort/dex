@@ -82,72 +82,53 @@
         var price = document.getElementById('price');
         var device = document.getElementById('device');
         var cancel = document.getElementById('cancel');
-
         var pricediv = document.getElementById('price-div');
         var devicediv = document.getElementById('device-div');
         var canceldiv = document.getElementById('cancel-div');
-
         price.onclick = function() {
             if (price.classList.contains('active-pill')) {
-
             }
-
             if (device.classList.contains('active-pill')) {
                 device.classList.remove('active-pill')
                 price.classList.add('active-pill')
-
                 devicediv.style.display = "none";
                 pricediv.style.display = "block";
             }
-
             if (cancel.classList.contains('active-pill')) {
                 cancel.classList.remove('active-pill')
                 price.classList.add('active-pill')
-
                 canceldiv.style.display = "none";
                 pricediv.style.display = "block";
             }
         }
-
         device.onclick = function() {
             if (device.classList.contains('active-pill')) {
-
             }
-
             if (price.classList.contains('active-pill')) {
                 price.classList.remove('active-pill')
                 device.classList.add('active-pill')
-
                 pricediv.style.display = "none";
                 devicediv.style.display = "block";
             }
-
             if (cancel.classList.contains('active-pill')) {
                 cancel.classList.remove('active-pill')
                 device.classList.add('active-pill')
-
                 canceldiv.style.display = "none";
                 devicediv.style.display = "block";
             }
         }
-
         cancel.onclick = function() {
             if (cancel.classList.contains('active-pill')) {
-
             }
-
             if (price.classList.contains('active-pill')) {
                 price.classList.remove('active-pill')
                 cancel.classList.add('active-pill')
-
                 pricediv.style.display = "none";
                 canceldiv.style.display = "block";
             }
-
             if (device.classList.contains('active-pill')) {
                 device.classList.remove('active-pill')
                 cancel.classList.add('active-pill')
-
                 devicediv.style.display = "none";
                 canceldiv.style.display = "block";
             }

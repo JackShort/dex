@@ -13,7 +13,7 @@ li {
 }
 
 .jumbotron {
-    background-color:#d83343;
+    background-color:#e02232;
     /* background-color:#00BFA5; */
     /* background-color:#7C4DFF; */
     /* background-color:#bd93f9; */
@@ -178,7 +178,6 @@ h3 {
     left: -10px;
     width: 0;
 }
-
 
 .signup-btn {
     font-weight: bold;
@@ -415,20 +414,31 @@ h3 {
   background-color: #c0392b;
 }
 
-
-
-
-.contact-form{
-  background-color: #272a31;
-  width: 720px;
-  padding: 10px;
-  margin: auto; 
-  color: white;
-  border-radius: 15px;
-
-
+.fill-col {
+  width: 100%;
 }
 
+.carousel {
+    font-weight: bold;
+    text-align: center;
+}
+
+.svg-icon {
+    font-size: 48px;
+    height: 54px;
+}
+
+.site-div {
+    text-align: center;
+}
+
+.price-div {
+    text-align: center;
+}
+
+.device-div {
+    text-align: center;
+}
 .col-sm-4{
     color: transparent; /* White text */
 
