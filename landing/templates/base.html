@@ -10,10 +10,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-        <script src="{% static 'js/main.js' %}"></script> <!-- This is how to include a static file -->
+        <script src="{% static 'js/main.js' %}"></script>
         <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
     </head>
-    <body>
+    <body onload="myFunction()">
 		<div class="jumbotron jumbotron-small">
 			<div class="container">
             	<nav class="navbar navbar-static-top navbar-top">

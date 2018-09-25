@@ -1,10 +1,16 @@
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, div {
     font-family: Helvetica, sans-serif;
-    color: #4A4A4A;
+    color: #ffffff;
+    /* color: #4A4A4A; */
 }
 
 body {
-    background-color: #141414;
+    background-color: #000;
+    /* background-color: #141414; */
+}
+
+li {
+    max-width: 300px;
 }
 
 .jumbotron {
@@ -72,6 +78,19 @@ h3 {
 .content {
     padding-top: 7rem;
     padding-bottom: 10rem;
+}
+
+.pill-container {
+    max-width: 300px;
+    border-bottom: #e02232 solid 5px;
+    cursor: pointer;
+}
+
+.pill-content {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    background-color: #141414;
+    border-bottom: solid 2px #3d3d3d;
 }
 
 .our-farms img {
@@ -395,4 +414,17 @@ h3 {
 
 .fill-col {
 	width: 100%;
+}
+
+.carousel {
+    font-weight: bold;
+    text-align: center;
+}
+
+.svg-icon {
+    font-size: 48px;
+    height: 54px;
+}
+
+.active {
 }
