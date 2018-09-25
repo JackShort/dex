@@ -5,8 +5,7 @@ h1, h2, h3, h4, p, div {
 }
 
 body {
-    background-color: #000;
-    /* background-color: #141414; */
+    background-color: #31383f;
 }
 
 li {
@@ -14,7 +13,7 @@ li {
 }
 
 .jumbotron {
-    background-color:#e02232;
+    background-color:#d83343;
     /* background-color:#00BFA5; */
     /* background-color:#7C4DFF; */
     /* background-color:#bd93f9; */
@@ -29,8 +28,8 @@ li {
 }
 
 .page-title{
-	padding-top: 15px;
-	padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .jumbotron * {
@@ -179,6 +178,7 @@ h3 {
     left: -10px;
     width: 0;
 }
+
 
 .signup-btn {
     font-weight: bold;
@@ -415,22 +415,47 @@ h3 {
   background-color: #c0392b;
 }
 
-.fill-col {
-	width: 100%;
+
+
+
+.contact-form{
+  background-color: #272a31;
+  width: 720px;
+  padding: 10px;
+  margin: auto; 
+  color: white;
+  border-radius: 15px;
+
+
 }
 
-.carousel {
-    font-weight: bold;
-    text-align: center;
-}
+.col-sm-4{
+    color: transparent; /* White text */
 
-.svg-icon {
-    font-size: 48px;
-    height: 54px;
 }
+.fill-col{
+  width: 100%;
+  background-color: transparent; /* Remove background fill */
+  text-transform: uppercase; /* Make text all uppercase */
+  color: #fff; /* White text */
+  height: 45px; /* Increase input height */
+}
+.signin-form{
+  background-color: #272a31;
+  width: 720px;
+  padding: 10px;
+  margin: auto; 
+  color: white;
 
-.site-div {
-    text-align: center;
+}
+.form-group{
+    width: 100%;
+
+  background-color: transparent; /* Remove background fill */
+  text-transform: uppercase; /* Make text all uppercase */
+  border-radius: 0; /* Remove corner curve */
+  color: #fff; /* White text */
+  height: 45px; /* Increase input height */
 }
 
 .price-div {
