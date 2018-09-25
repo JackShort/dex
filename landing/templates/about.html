@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block title %}About Us{% endblock %}
 
@@ -15,25 +16,48 @@
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-sm-4">
+				<img src="{% static 'images/uva.png' %}" class="fill-col">
+			</div>
+			<div class="col-sm-8">
+				<h2>Who Are We?</h2>
 			    <p>
-			        We are three guys who attend the University of Virginia. We are trying to make the Internet experience safer and more enjoyable at a fair and affordable price.
+			        We are three Computer Science students attending the University of Virginia.
+					More importantly, we hate ads. When's the last time you were ever glad you saw
+					an ad on YouTube? For us, it's never. We want to make the Internet experience
+					safer and more enjoyable for all types of media consumers. And we hope to deliver
+					that experience at a fair and affordable price.
 			    </p>
 			    <p>
 			        So we came up with Dex.
 			    </p>
 			    <p>
-			        Dex is the middleman between you and the companies that offer you their product at the price of your privacy and bloated ads. We came up a solution that helps both parties. You get a faster, cleaner, better experience and the companies make marginally more per user.
+			        Dex is the middleman between you and the companies that offer you their product
+					at the price of your privacy and bloated ads. We came up a solution that helps
+					both parties. You get a faster, cleaner, better experience and the companies
+					make marginally more per user.
 			    </p>
-			    <p>
-			        For just 7 dollars per month, you can choose the websites you visit the most. You create your own package of your top sites and those become mining and ad free on all your devices.
-			    </p>
-			    <p>
-			        If you're a social media savant, a sports fanatic, or a news junkie, we have the right solution for you. It's time for you to have an Internet experience you enjoy. Dex is here.
-			    </p>
-			    <p>
-			        -Jack, Joe and Jack
-			    </p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<h2>The Catch?</h2>
+				<p>
+					There is no catch. For just 7 dollars per month, you can choose the websites you
+					visit the most. You create your own package of your top sites and those become
+					mining and ad free on all your devices.
+				</p>
+				<p>
+					If you're a social media savant, a sports fanatic, or a news junkie, we have the
+					right solution for you. It's time for you to have an Internet experience you
+					enjoy. Dex is here.
+				</p>
+				<p>
+					-Jack, Joe, and Jack
+				</p>
+			</div>
+			<div class="col-sm-4">
+				<img src="{% static 'images/logo.png' %}" class="fill-col">
 			</div>
 		</div>
 	</div>
