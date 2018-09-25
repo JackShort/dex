@@ -432,40 +432,8 @@ h3 {
     text-align: center;
 }
 
-.price-div {
-    text-align: center;
-}
-
-.device-div {
-    text-align: center;
-}
-.col-sm-4{
-    color: transparent; /* White text */
-
-}
-.fill-col{
-  width: 100%;
-  background-color: transparent; /* Remove background fill */
-  text-transform: uppercase; /* Make text all uppercase */
-  color: #fff; /* White text */
-  height: 45px; /* Increase input height */
-}
-.signin-form{
-  background-color: #272a31;
-  width: 720px;
-  padding: 10px;
-  margin: auto; 
-  color: white;
-
-}
-.form-group{
-    width: 100%;
-
-  background-color: transparent; /* Remove background fill */
-  text-transform: uppercase; /* Make text all uppercase */
-  border-radius: 0; /* Remove corner curve */
-  color: #fff; /* White text */
-  height: 45px; /* Increase input height */
+.site-div p {
+    font-size: 1.5em;
 }
 
 .price-div {
@@ -474,4 +442,8 @@ h3 {
 
 .device-div {
     text-align: center;
+}
+
+.device-div p {
+    font-size: 1.5em;
 }
