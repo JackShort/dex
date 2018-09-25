@@ -433,10 +433,18 @@ h3 {
     text-align: center;
 }
 
+.site-div p {
+    font-size: 1.5em;
+}
+
 .price-div {
     text-align: center;
 }
 
 .device-div {
     text-align: center;
+}
+
+.device-div p {
+    font-size: 1.5em;
 }
