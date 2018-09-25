@@ -82,8 +82,11 @@ h3 {
 
 .pill-container {
     max-width: 300px;
-    border-bottom: #e02232 solid 5px;
     cursor: pointer;
+}
+
+.active-pill {
+    border-bottom: #e02232 solid 5px;
 }
 
 .pill-content {
