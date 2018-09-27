@@ -25,7 +25,7 @@ SECRET_KEY = '&_6(&f4gzx(l+a$q)5cb&m4m7tn9e$8k2vjsu2#*fgaums+skm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['thedex.herokuapp.com']
+ALLOWED_HOSTS = ['thedex.herokuapp.com', 'localhost']
 
 
 # Application definition
