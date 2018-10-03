@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^about/$', views.AboutPageView.as_view(), name='about'),
     url(r'^contact/$', views.ContactPageView.as_view(), name='contact'),
     url(r'^login/$', views.LoginPageView.as_view(), name='login'),
-    url(r'^signup/$', views.SignupPageView.as_view(), name='signup'),
+    url(r'^signup/$', views.signup, name='signup'),
 ]
