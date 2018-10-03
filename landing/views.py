@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.views.generic import TemplateView
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 
@@ -37,9 +37,17 @@ def signup(request):
 
 def signin(request):
     if request.method == 'POST':
-        username = request.POST('username')
-        password = request.POST('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            rawPassword = form.cleaned_data.get('password')
+            user = authenticate (request, username=username, password=rawPassword)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                return redirect('home')
+    else:
+        form = AuthenticationForm()
+    
+    return render(request, 'login.html', {'form': form})
