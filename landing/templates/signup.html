@@ -14,7 +14,12 @@
 	</div>
 	<br>
 	<div class="container">
-		<div class="row form-group">
+		<form method="post">
+			{% csrf_token %}
+			{{ form }}
+			<button type="submit">Sign Up</button>
+		</form>
+		{% comment %} <div class="row form-group">
 			<center>
 				Already have an account? Login <a href="{% url 'login' %}">here</a>.
 			</center>
@@ -44,7 +49,7 @@
 				<center>
 					<input type="submit" class="btn btn-danger" value="Submit">
 				</center>
-			</div>
+			</div> {% endcomment %}
 		<form>
 	</div>
 {% endblock %}
