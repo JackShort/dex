@@ -33,7 +33,17 @@ li {
    width: 100% !important;
   font-size: 14pt; 
  }
+ .title{
+  background-color:  #303030;
+ }
+.title h1 {
+   color:white; 
+margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-weight: 600 !important; 
+      font-size: 35pt !important; 
 
+}
 .jumbotron {
     background-color:#e02232;
     /* background-color:#00BFA5; */
