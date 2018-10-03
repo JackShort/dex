@@ -15,11 +15,9 @@
 	</div>
 	<br>
 	<div class="container full-height-container">
+
 		<div class="row">
-			<div class="col-sm-4">
-				<img src="{% static 'images/uva.png' %}" class="fill-col-img">
-			</div>
-			<div class="col-sm-8">
+			<div class="col-sm-8" style= "  width: 100% font-size: 14pt;">
 				<h2>Who Are We?</h2>
 			    <p>
 			        We are three Computer Science students attending the University of Virginia.
@@ -37,10 +35,6 @@
 					both parties. You get a faster, cleaner, better experience and the companies
 					make marginally more per user.
 			    </p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-8">
 				<h2>The Catch?</h2>
 				<p>
 					There is no catch. For just 7 dollars per month, you can choose the websites you
@@ -56,9 +50,24 @@
 					-Jack, Joe, and Jack
 				</p>
 			</div>
-			<div class="col-sm-4">
-				<img src="{% static 'images/logo.png' %}" class="fill-col-img">
-			</div>
+			
 		</div>
+		<div id="Joe"  style="float:left; width:33%;">
+			<img src="{% static 'images/logo.png' %}" class="fill-col-img">
+
+			Joe Karaki is basically Charlie from It's Always Sunny. 
+		</div>
+		<div id="Short"    style="float:left; width:33%;">
+						<img src="{% static 'images/short.png' %}" class="fill-col-img">
+						<br>
+			Jack Short quite literally does not "school.""
+		</div>
+		<div id="Schefer" style="float:left; width:33%;">
+			<img src="{% static 'images/chef.png' %}" class="fill-col-img">
+
+			We don't really know how Jack Schefer joined the team.
+		</div>
+
 	</div>
+
 {% endblock %}

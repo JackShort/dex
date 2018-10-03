@@ -26,6 +26,14 @@ li {
     max-width: 300px;
 }
 
+ .fill-col-img {
+     width: 40% !important;
+ }
+ .col-sm-8{
+   width: 100% !important;
+  font-size: 14pt; 
+ }
+
 .jumbotron {
     background-color:#e02232;
     /* background-color:#00BFA5; */
@@ -503,7 +511,4 @@ h3 {
   color: white; 
  }  
 
- .fill-col-img {
-     width: 100%;
- }
 
