@@ -14,6 +14,16 @@
 	</div>
 	<br>
 	<div class="container">
+		{% if errors and errors|length > 0 %}
+			<div class="flash-errors alert alert-warning">
+				<ul>
+					{% for e in errors %}
+						<li>{{e}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+
 		<form method="post">
 			{% csrf_token %}
 			{{ form }}
