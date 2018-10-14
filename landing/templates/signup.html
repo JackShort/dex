@@ -24,11 +24,20 @@
 			</div>
 		{% endif %}
 
-		<form method="post">
-			{% csrf_token %}
-			{{ form }}
-			<button type="submit">Sign Up</button>
-		</form>
+		<div class="row form-elements">
+			<form method="post">
+				{% csrf_token %}
+				<div class="col-sm-6">
+					{{ user_form.as_p }}
+				</div>
+				<div class="col-sm-6">
+					{{ profile_form.as_p }}
+				</div>
+					<button type="submit">Sign Up</button>
+			</form>
+		</div>
+
+
 		{% comment %} <div class="row form-group">
 			<center>
 				Already have an account? Login <a href="{% url 'login' %}">here</a>.
