@@ -24,24 +24,21 @@
 			</div>
 		{% endif %}
 
-		<form method="post">
-			{% csrf_token %}
-			{% for field in form %}
-				<div class="row form-group">
-					<div class="col-sm-4">
-						<input type="text" class="fill-col" name="firstname" placeholder="First Name">
-					</div>
-	
-					<div class="col-sm-4">
-						<input type="text" class="fill-col" name="lastname" placeholder="Last Name">
-					</div>
-	
-					<div class="col-sm-4">
-						<input type="email" class="fill-col" name="email" placeholder="Email Address">
-					</div>
+		<div class="row form-elements">
+			<form method="post">
+				{% csrf_token %}
+				<div class="col-sm-6">
+					{{ user_form.as_p }}
 				</div>
-			<button type="submit">Sign Up</button>
-		<div class="row form-group">
+				<div class="col-sm-6">
+					{{ profile_form.as_p }}
+				</div>
+					<button type="submit">Sign Up</button>
+			</form>
+		</div>
+
+
+		{% comment %} <div class="row form-group">
 			<center>
 				Already have an account? Login <a href="{% url 'login' %}">here</a>.
 			</center>
