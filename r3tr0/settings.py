@@ -106,6 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTH_PROFILE_MODULE = "r3tr0.Profile"
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 

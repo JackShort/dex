@@ -7,6 +7,9 @@ h1, h2, h3, h4, p, div {
 html {
     height: 100%;
 }
+input{
+  color: black !important;
+}
 
 body {
     background-color: #000000;
@@ -31,17 +34,17 @@ li {
  }
  .col-sm-8{
    width: 100% !important;
-  font-size: 14pt; 
+  font-size: 14pt;
  }
  .title{
   background-color:  #303030;
  }
 .title h1 {
-   color:white; 
-margin: 0;
+    color:white;
+    margin: 0;
     font-family: Helvetica, sans-serif;
-    font-weight: 600 !important; 
-      font-size: 35pt !important; 
+    font-weight: 600 !important;
+    font-size: 35pt !important;
 
 }
 .jumbotron {
@@ -487,38 +490,42 @@ h3 {
   background-color: #272a31;
   width: 720px;
   padding: 10px;
-  margin: auto; 
+  margin: auto;
   color: white;
   border-radius: 15px;
 
 
 }
-.form-group{  
-  width: 100%;  
-  background-color: transparent; /* Remove background fill */  
-  text-transform: uppercase; /* Make text all uppercase */  
+.form-group{
+  width: 100%;
+  background-color: transparent; /* Remove background fill */
+  text-transform: uppercase; /* Make text all uppercase */
   border-radius: 15px;
-  color: #fff; /* White text */ 
-  height: 45px; /* Increase input height */ 
-} 
-.col-sm-4{  
-    color: transparent; /* White text */  
- }  
-.fill-col{  
-  width: 100%;  
-  background-color: transparent; /* Remove background fill */ 
-  text-transform: uppercase; /* Make text all uppercase */  
-  color: #fff; /* White text */ 
-  height: 45px; /* Increase input height */ 
-} 
-.signin-form{ 
-  background-color: #272a31;  
-  width: 720px; 
-  padding: 10px;  
+  color: #fff; /* White text */
+  height: 45px; /* Increase input height */
+}
+.col-sm-4{
+    color: transparent; /* White text */
+ }
+.fill-col{
+  width: 100%;
+  background-color: transparent; /* Remove background fill */
+  text-transform: uppercase; /* Make text all uppercase */
+  color: #fff; /* White text */
+  height: 45px; /* Increase input height */
+}
+.signin-form{
+  background-color: #272a31;
+  width: 720px;
+  padding: 10px;
     border-radius: 15px;
 
-  margin: auto;   
-  color: white; 
- }  
+  margin: auto;
+  color: white;
+ }
 
-
+.form-elements input,
+.form-elements select,
+.form-elements button {
+	color: black;
+}
