@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django import forms
+from django.db import models
 from .models import Profile
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -39,3 +41,19 @@ class ProfileForm(forms.ModelForm):
         except ValueError:
             raise forms.ValidationError("Only digits please")
         return zipcode
+        
+    def clean_address_1(self):
+       	address_1 = self.cleaned_data['address_1']
+       	address_1 = address_1.replace(" ", "")
+        if not address_1.isalnum():
+        	raise forms.ValidationError("Please use only Alphanumeric characters in the Address box")
+        return address_1
+        
+    def clean_city(self):
+       	city = self.cleaned_data['city']
+       	city = city.replace(" ", "")
+        if not city.isalpha():
+        	raise forms.ValidationError("Please use only letters in the City box")
+        return city
+								
+
