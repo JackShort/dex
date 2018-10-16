@@ -5,6 +5,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 
+from .forms import UserForm, ProfileForm
+
 class HomePageView(TemplateView):
     template_name = "index.html"
 
@@ -22,18 +24,24 @@ class SignupPageView(TemplateView):
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            rawPassword = form.cleaned_data.get('password')
-            user = authenticate (username=username, password=rawPassword)
-            login(request, user)
+        user_form = UserForm(request.POST)
+        profile_form = ProfileForm(request.POST)
+        if user_form.is_valid() and profile_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_profile = profile_form.save(commit=False)
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+            new_profile.user = new_user
+            new_profile.save()
+            login(request, new_user)
             return redirect('home')
+        else:
+            return render(request, 'signup.html', {'user_form': user_form, 'profile_form': profile_form})
     else:
-        form = UserCreationForm()
+        user_form = UserForm()
+        profile_form = ProfileForm()
 
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'signup.html', {'user_form': user_form, 'profile_form': profile_form})
 
 def signin(request):
     if request.method == 'POST':
@@ -49,5 +57,5 @@ def signin(request):
                 return redirect('home')
     else:
         form = AuthenticationForm()
-    
+
     return render(request, 'login.html', {'form': form})
