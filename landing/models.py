@@ -64,7 +64,7 @@ class Profile(models.Model):
 	address_2 = models.CharField(max_length=100, default='')
 	city = models.CharField(max_length=50)
 	state = models.CharField(max_length=2, choices=US_STATES)
-	zipcode = models.PositiveIntegerField(null=True)
+	zipcode = models.CharField(max_length=5)
 
 	# @receiver(post_save, sender=User)
 	# def create_user_profile(sender, instance, created, **kwargs):
