@@ -18,10 +18,26 @@ class UserForm(forms.ModelForm):
     def clean_username(self):
         username = self.cleaned_data['username']
 
-        if not username.isalpha():
+        if not username.isalnum():
             raise forms.ValidationError("Please only alphanumeric symbols")
         
         return username
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data['first_name']
+
+        if not first_name.isalpha():
+            raise forms.ValidationError("Please only alphanumeric symbols")
+        
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data['last_name']
+
+        if not last_name.isalpha():
+            raise forms.ValidationError("Please only alphanumeric symbols")
+        
+        return last_name
 
 class ProfileForm(forms.ModelForm):
     class Meta:
@@ -37,7 +53,7 @@ class ProfileForm(forms.ModelForm):
         if len(zipcode) != 5:
             raise forms.ValidationError("Not 5 digits")
         try:
-            value = int(zipcode)
+            int(zipcode)
         except ValueError:
             raise forms.ValidationError("Only digits please")
         return zipcode
@@ -55,5 +71,3 @@ class ProfileForm(forms.ModelForm):
         if not city.isalpha():
         	raise forms.ValidationError("Please use only letters in the City box")
         return city
-								
-
