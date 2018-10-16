@@ -7,6 +7,9 @@ h1, h2, h3, h4, p, div {
 html {
     height: 100%;
 }
+input{
+  color: black !important;
+}
 
 body {
     background-color: #000000;

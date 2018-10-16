@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 US_STATES = (
     ('AL', 'Alabama'),
@@ -64,7 +65,8 @@ class Profile(models.Model):
 	address_2 = models.CharField(max_length=100, default='')
 	city = models.CharField(max_length=50)
 	state = models.CharField(max_length=2, choices=US_STATES)
-	zipcode = models.PositiveIntegerField(null=True)
+	zipcode = models.PositiveIntegerField(validators=[MinValueValidator(0),
+        MaxValueValidator(99999)])
 
 	# @receiver(post_save, sender=User)
 	# def create_user_profile(sender, instance, created, **kwargs):
