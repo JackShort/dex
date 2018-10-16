@@ -23,24 +23,25 @@ class SignupPageView(TemplateView):
     template_name = "signup.html"
 
 def signup(request):
-	if request.method == 'POST':
-		user_form = UserForm(request.POST)
-		profile_form = ProfileForm(request.POST)
-		if user_form.is_valid() and profile_form.is_valid():
-			user_form.save()
-			profile_form.save()
-			username = user_form.cleaned_data.get('username')
-			rawPassword = user_form.cleaned_data.get('password')
-			user = authenticate (username=username, password=rawPassword)
-			login(request, user)
-			return redirect('home')
-		else:
-			return render(request, 'signup.html', {'user_form': user_form, 'profile_form': profile_form})
-	else:
-		user_form = UserForm()
-		profile_form = ProfileForm()
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        profile_form = ProfileForm(request.POST)
+        if user_form.is_valid() and profile_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_profile = profile_form.save(commit=False)
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+            new_profile.user = new_user
+            new_profile.save()
+            login(request, new_user)
+            return redirect('home')
+        else:
+            return render(request, 'signup.html', {'user_form': user_form, 'profile_form': profile_form})
+    else:
+        user_form = UserForm()
+        profile_form = ProfileForm()
 
-	return render(request, 'signup.html', {'user_form': user_form, 'profile_form': profile_form})
+    return render(request, 'signup.html', {'user_form': user_form, 'profile_form': profile_form})
 
 def signin(request):
     if request.method == 'POST':

@@ -11,3 +11,8 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('address_1', 'address_2', 'city', 'state', 'zipcode')
+    def clean_zipcode(self):
+        zipcode = self.cleaned_data['zipcode']
+        if zipcode != '5':
+            raise forms.ValidationError("fuck you joe")
+        return zipcode
