@@ -22,6 +22,10 @@ class LoginPageView(TemplateView):
 class SignupPageView(TemplateView):
     template_name = "signup.html"
 
+class PayPageView(TemplateView):
+    template_name = "pay.html"
+
+
 def signup(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST)

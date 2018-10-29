@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^contact/$', views.ContactPageView.as_view(), name='contact'),
     url(r'^signin/$', views.signin, name='signin'),
     url(r'^signup/$', views.signup, name='signup'),
+   	url(r'^pay/$', views.PayPageView.as_view(), name='pay'),
+
 ]
