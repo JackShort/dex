@@ -4,6 +4,8 @@ from django.views.generic import TemplateView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
+from django.core.mail import send_mail
+from django.conf import settings
 
 from .forms import UserForm, ProfileForm
 
@@ -37,6 +39,20 @@ def signup(request):
             new_user.save()
             new_profile.user = new_user
             new_profile.save()
+
+            send_mail(
+                'Welcome to Dex - Account Confirmation', # subject
+                'Hi ' + user_form.cleaned_data['first_name'] + ', \n\n' # message
+                    + 'Congratulations on succesfully registering for Dex, we\'re glad to have you! '
+                    + 'Make sure you keep up date with the latest Dex news on our homepage and '
+                    + 'look out for future emails with offers and other exclusives. Welcome to the '
+                    + 'the future of web browsing. \n\n'
+                    + 'Don\'t be afraid to reach out with any questions you may have,\n'
+                    + 'The Dex Team',
+                settings.EMAIL_HOST_USER, # email to send from
+                [user_form.cleaned_data['email']] # recipient
+            )
+
             login(request, new_user)
             return redirect('home')
         else:
