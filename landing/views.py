@@ -43,6 +43,8 @@ class SignupPageView(TemplateView):
 class PayPageView(TemplateView):
     template_name = "pay.html"
 
+class SubscribePageView(TemplateView):
+    template_name = "subscribe.html"
 
 def signup(request):
     if request.method == 'POST':
