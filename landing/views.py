@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.core.mail import send_mail
 from django.conf import settings
+from django.shortcuts import redirect
 
 from .forms import UserForm, ProfileForm
 
@@ -17,6 +18,21 @@ class AboutPageView(TemplateView):
 
 class ContactPageView(TemplateView):
     template_name = "contact.html"
+
+    def post(self, request, *args, **kwargs):
+        context = request.POST
+        if context['firstname'] != '' and context['lastname'] != '' and context['email'] != '' and context['content'] != '':
+
+            send_mail(
+                'Customer Contact from ' + context['firstname'], # subject
+                'Customer First Name: ' + context['firstname'] + '\n' +
+                'Customer E-Mail: ' + context['email'] + '\n' +
+                'Customer Feedback: ' + context['content'],
+                settings.EMAIL_HOST_USER, # email to send from
+                [settings.EMAIL_HOST_USER] # recipient
+            )
+        
+        return redirect('/')
 
 class LoginPageView(TemplateView):
     template_name = "login.html"

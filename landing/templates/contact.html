@@ -14,7 +14,8 @@
 	</div>
 <br>
 	<div class="container">
-		<form action="#" class="contact-form">
+		<form action="{% url 'contact' %}" class="contact-form" method="POST">
+			{% csrf_token %}
 			<p>
 					Here at Dex, we love getting feedback from current and potential customers. If you
 					are in any way displeased with our services, if you have ideas for feature expansion,
