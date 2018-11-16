@@ -27,6 +27,21 @@ p {
     margin-top: 0;
 }
 
+dd {
+    margin-left: 0;
+}
+
+.form-group .form-control {
+    background-color: #fafbfc;
+    margin-right: 5px;
+    max-width: 100%;
+    width: 440px;
+}
+
+.form-control, .form-select {
+    font-size: 14px;
+}
+
 #holder {
     min-height: 100%;
     position: relative;
@@ -498,13 +513,6 @@ h3 {
 
 
 }
-.form-group{
-  width: 100%;
-  background-color: transparent; /* Remove background fill */
-  text-transform: uppercase; /* Make text all uppercase */
-  border-radius: 15px;
-  height: 45px; /* Increase input height */
-}
 
 .fill-col{
   width: 100%;
@@ -721,4 +729,8 @@ h3 {
 
 .pt-big {
     padding-top: 40px;
+}
+
+.form-group dt {
+    margin: 0 0 6px;
 }
