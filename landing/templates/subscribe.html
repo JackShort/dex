@@ -1,101 +1,92 @@
-
 {% extends 'base.html' %}
 
 {% block title %}Products{% endblock %}
 
 {% block pagecontent %}
-<div class="jumbotron page-title">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Subscribe to the following websites:</h1>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
 <div class="container">
-    <form>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            All Websites
-                        </label>
-                </div>
+	<h1 class="h00-mktg text-center lh-condensed mb-3 pt-big">
+		Plans for all users
+	</h1>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Facebook
-                        </label>
-                </div>
+	<p class="lead-mktg text-gray mb-6 col-md-9-text mx-auto text-center">
+		Cleq provides advertisement free and privacy guranteed browsing. Choose a plan that is a appropriate for you.
+	</p>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Youtube
-                        </label>
-                </div>
+	<div class="row">
+    	<div class="plans-card col-sm-3 text-center bg-white border box-shadow">
+			<a class="d-block mb-0 p-3 border-bottom text-blue no-underline" href="/pricing/developer">
+				<h2 class="h3-mktg">Skeleton</h2>
+			</a>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Google
-                        </label>
-                </div>
+			<div class="plans-card-text p-3 border">
+				<h3 class="h0-mktg text-normal mb-0 lh-condensed">
+					<span class="local-currency">$3</span>
+				</h3>
+				<p class="mb-4 alt-text-small text-gray">
+					per month
+				</p>
+				
+				<h4 class="h4-mktg lh-condensed mb-1">Includes:</h4>
+				<ul class="list-style-none lh-condensed">
+					<li class="mb-1">5 Websites</li>
+					<li class="mb-1">No data mining on sites</li>
+					<li class="mb-1">5 hours for misc. sites</li>
+					<li class="mb-1">No ads on sites</li>
+				</ul>
+			</div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Instagram
-                        </label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            New York Times
-                        </label>
-                </div>
+			<a class="btn btn-block btn-outline-blue h4-mktg plans-card-btn" href="/join?plan=pro&amp;source=button-pricing">Choose sites</a>
+		</div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Facebook
-                        </label>
-                </div>
+    	<div class="plans-card col-sm-3 col-sm-offset-1 text-center bg-white border box-shadow">
+			<a class="d-block mb-0 p-3 border-bottom text-green no-underline" href="/pricing/developer">
+				<h2 class="h3-mktg">Unlimited</h2>
+			</a>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Youtube
-                        </label>
-                </div>
+			<div class="plans-card-text p-3 border">
+				<h3 class="h0-mktg text-normal mb-0 lh-condensed">
+					<span class="local-currency">$7</span>
+				</h3>
+				<p class="mb-4 alt-text-small text-gray">
+					per month
+				</p>
+				
+				<h4 class="h4-mktg lh-condensed mb-1">Includes:</h4>
+				<ul class="list-style-none lh-condensed">
+					<li class="mb-1">Unlimited websites</li>
+					<li class="mb-1">No data mining on sites</li>
+					<li class="mb-1">Can add on subscription services</li>
+					<li class="mb-1">No ads on sites</li>
+				</ul>
+			</div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Google
-                        </label>
-                </div>
+			<a class="btn btn-block btn-outline-green h4-mktg plans-card-btn" href="/join?plan=pro&amp;source=button-pricing">View sites</a>
+		</div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Instagram
-                        </label>
-                </div>
-            </div>
-        </div>
+    	<div class="plans-card col-sm-3 col-sm-offset-1 text-center bg-white border box-shadow">
+			<a class="d-block mb-0 p-3 border-bottom text-purple no-underline" href="/pricing/developer">
+				<h2 class="h3-mktg">Master</h2>
+			</a>
 
-        <div class="row">
-            <div class="span6" style="float: none; margin: 0 auto;">
-                <a class="signup-btn pay-btn" href="{% url 'pay' %}">SUBSCRIBE</a>
-            </div>
-        </div>
-    </form>
+			<div class="plans-card-text p-3 border">
+				<h3 class="h0-mktg text-normal mb-0 lh-condensed">
+					<span class="local-currency">$10</span>
+				</h3>
+				<p class="mb-4 alt-text-small text-gray">
+					per month
+				</p>
+				
+				<h4 class="h4-mktg lh-condensed mb-1">Includes:</h4>
+				<ul class="list-style-none lh-condensed">
+					<li class="mb-1">Unlimited websites, inlcuding videos</li>
+					<li class="mb-1">No data mining on sites</li>
+					<li class="mb-1">Can add on subscription services</li>
+					<li class="mb-1">No ads on sites</li>
+				</ul>
+			</div>
+
+			<a class="btn btn-block btn-outline-purple h4-mktg plans-card-btn" href="/join?plan=pro&amp;source=button-pricing">Start a free trial</a>
+    	</div>
+	</div>
 </div>
 {% endblock %}

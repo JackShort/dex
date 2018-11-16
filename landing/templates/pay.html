@@ -3,34 +3,20 @@
 {% block title %}Products{% endblock %}
 
 {% block pagecontent %}
-	<div class="jumbotron page-title">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h1>Products</h1>
-				</div>
-			</div>
-		</div>
-	</div>
-<br>
 <div class="container">
+	<h1 class="h00-mktg text-center lh-condensed mb-3 pt-big">
+		Plans for all users
+	</h1>
 
-<div>
-  <a class="buy-with-crypto"
-     href="https://commerce.coinbase.com/checkout/a8cbb8eb-8b34-4d00-86cf-f1f49969cf24">
-    <span>Base Package</span>
-  </a>
-  <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
-  </script>
-</div>
-<br>
-<div>
-  <a class="buy-with-crypto"
-     href="https://commerce.coinbase.com/checkout/93c97390-8645-4564-adec-201dd2b65305">
-    <span>All Inclusive</span>
-  </a>
-  <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
-  </script>
-</div>
+	<p class="lead-mktg text-gray mb-6 col-md-9-text mx-auto text-center">
+		Cleq provides advertisement free and privacy guranteed browsing. Choose a plan that is a appropriate for you.
+	</p>
+
+	<form action="https://test.bitpay.com/checkout" method="post" >
+		<input type="hidden" name="action" value="checkout" />
+		<input type="hidden" name="posData" value="" />
+		<input type="hidden" name="data" value="72W1/+kkgaoiujqM2ImLHAJ6s+dAbGjNXdk0wLct3NgQ5bQckN+4dNXcqOKk4DdRWQ+jWIA6TL8XcYKw4Ed0bXv2zB5Qo5+0IYN3VjMhn+c=" />
+		<input type="image" src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" name="submit" style="width:210px;" alt="BitPay, the easy way to pay with bitcoins." >
+  	</form>
 </div>
 {% endblock %}

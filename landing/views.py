@@ -49,32 +49,14 @@ class SubscribePageView(TemplateView):
 def signup(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST)
-        profile_form = ProfileForm(request.POST)
-        if user_form.is_valid() and profile_form.is_valid():
+        if user_form.is_valid():
             new_user = user_form.save(commit=False)
-            new_profile = profile_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()
-            new_profile.user = new_user
-            new_profile.save()
-
-            send_mail(
-                'Welcome to Dex - Account Confirmation', # subject
-                'Hi ' + user_form.cleaned_data['first_name'] + ', \n\n' # message
-                    + 'Congratulations on succesfully registering for Dex, we\'re glad to have you! '
-                    + 'Make sure you keep up date with the latest Dex news on our homepage and '
-                    + 'look out for future emails with offers and other exclusives. Welcome to the '
-                    + 'the future of web browsing. \n\n'
-                    + 'Don\'t be afraid to reach out with any questions you may have,\n'
-                    + 'The Dex Team',
-                settings.EMAIL_HOST_USER, # email to send from
-                [user_form.cleaned_data['email']] # recipient
-            )
-
             login(request, new_user)
             return redirect('home')
         else:
-            return render(request, 'signup.html', {'user_form': user_form, 'profile_form': profile_form})
+            return render(request, 'signup.html', {'user_form': user_form})
     else:
         user_form = UserForm()
         profile_form = ProfileForm()
