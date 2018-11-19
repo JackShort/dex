@@ -40,11 +40,15 @@ class LoginPageView(TemplateView):
 class SignupPageView(TemplateView):
     template_name = "signup.html"
 
+class SubscribePageView(TemplateView):
+    template_name = "subscribe.html"
+
+class SelectPageView(TemplateView):
+    template_name = "select.html"
+
 class PayPageView(TemplateView):
     template_name = "pay.html"
 
-class SubscribePageView(TemplateView):
-    template_name = "subscribe.html"
 
 def signup(request):
     if request.method == 'POST':
