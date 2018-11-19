@@ -10,6 +10,8 @@ urlpatterns = [
    	url(r'^subscribe/$', views.SubscribePageView.as_view(), name='subscribe'),
    	url(r'^select/$', views.SelectPageView.as_view(), name='select'),
    	url(r'^pay/$', views.PayPageView.as_view(), name='pay'),
+   	url(r'^member/$', views.member, name='member'),
+   	url(r'^signout/$', views.signout, name='signout'),
 
 
 ]

@@ -3,10 +3,11 @@ from django.template import loader
 from django.views.generic import TemplateView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.core.mail import send_mail
 from django.conf import settings
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 from .forms import UserForm, ProfileForm
 
@@ -49,6 +50,16 @@ class SelectPageView(TemplateView):
 class PayPageView(TemplateView):
     template_name = "pay.html"
 
+@login_required(login_url='/signin')
+def signout(request):
+    logout(request)
+    return redirect('home')
+
+@login_required(login_url='/signin')
+def member(request):
+    template_name = "member.html"
+    if request.method == 'GET':
+        return render(request, template_name)
 
 def signup(request):
     if request.method == 'POST':
@@ -58,7 +69,7 @@ def signup(request):
             new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()
             login(request, new_user)
-            return redirect('home')
+            return redirect('member')
         else:
             return render(request, 'signup.html', {'user_form': user_form})
     else:
@@ -76,7 +87,7 @@ def signin(request):
             user = authenticate (request, username=username, password=rawPassword)
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return redirect('member')
             else:
                 return redirect('home')
     else:
