@@ -71,3 +71,11 @@ class ProfileForm(forms.ModelForm):
         if not city.isalpha():
         	raise forms.ValidationError("Please use only letters in the City box")
         return city
+
+class PlanForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('plan', )
+
+    def __init__(self, *args, **kwargs):
+        super(PlanForm, self).__init__(*args, **kwargs)

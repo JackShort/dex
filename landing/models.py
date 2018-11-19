@@ -57,6 +57,12 @@ US_STATES = (
     ('WY', 'Wyoming'),
 )
 
+PLANS = (
+    ('SK', 'Skeleton'),
+    ('UN', 'Unlimited'),
+    ('MA', 'Master'),
+)
+
 # Create your models here.
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -67,11 +73,13 @@ class Profile(models.Model):
 	state = models.CharField(max_length=2, choices=US_STATES)
 	zipcode = models.CharField(max_length=5)
 
-	# @receiver(post_save, sender=User)
-	# def create_user_profile(sender, instance, created, **kwargs):
-	# 	if created:
-	# 		Profile.objects.create(user=instance)
+	plan = models.CharField(max_length=2, choices=PLANS, default='SK')
 
-	# @receiver(post_save, sender=User)
-	# def save_user_profile(sender, instance, **kwargs):
-	# 	instance.profile.save()
+	@receiver(post_save, sender=User)
+	def create_user_profile(sender, instance, created, **kwargs):
+		if created:
+			Profile.objects.create(user=instance)
+
+	@receiver(post_save, sender=User)
+	def save_user_profile(sender, instance, **kwargs):
+		instance.profile.save()

@@ -1,15 +1,16 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.views.generic import TemplateView
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth import login, authenticate, logout, update_session_auth_hash
 from django.core.mail import send_mail
 from django.conf import settings
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
-from .forms import UserForm, ProfileForm
+from .forms import UserForm, ProfileForm, PlanForm
+from .models import Profile
 
 class HomePageView(TemplateView):
     template_name = "index.html"
@@ -56,10 +57,39 @@ def signout(request):
     return redirect('home')
 
 @login_required(login_url='/signin')
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+    
+    return redirect('member')
+
+@login_required(login_url='/signin')
+def change_plan(request):
+    if request.method == 'POST':
+        form = PlanForm(request.POST, request.user)
+        if form.is_valid():
+            new_plan = form.cleaned_data['plan']
+            request.user.profile.plan = new_plan
+            request.user.profile.save(update_fields=['plan'])
+    
+    return redirect('member')
+
+
+@login_required(login_url='/signin')
 def member(request):
     template_name = "member.html"
-    if request.method == 'GET':
-        return render(request, template_name)
+    password_form = PasswordChangeForm(request.user)
+    plan_form = PlanForm(request.POST, request.user)
+    plan_form.data = plan_form.data.copy()
+    plan_form.data['plan'] = request.user.profile.plan
+
+    return render(request, template_name, {
+        'password_form': password_form,
+        'plan_form': plan_form
+    })
 
 def signup(request):
     if request.method == 'POST':
