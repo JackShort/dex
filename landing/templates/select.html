@@ -5,27 +5,24 @@
 
 {% block pagecontent %}
 <div class="container">
-	<h1 class="h00-mktg text-center lh-condensed mb-3 pt-big">
-		Selector	
-	</h1>
-
+	<h1 class="h0-mktg text-center lh-condensed mb-3 pt-big">
+Choose your sites!	</h1>
 	<div class="lead-mktg text-gray mb-6 col-md-9-text mx-auto text-center">
 		<ul class= "site-choose">
 		  <li><input type="checkbox" id="cb1" />
-		    <label for="cb1"><img src="{% static 'images/check.png' %}" />Instagram</label>
+		    <label for="cb1">Instagram</label>
 		  </li>
 		  <li><input type="checkbox" id="cb2" />
-		    <label for="cb2"><img src="{% static 'images/check.png' %}" /> Facebook</label>
+		    <label for="cb2"> Facebook</label>
 		  </li>
 		  <li><input type="checkbox" id="cb3" />
-		    <label for="cb3"><img src="{% static 'images/check.png' %}" />ESPN</label>
+		    <label for="cb3">ESPN</label>
 		  </li>
 		  <li><input type="checkbox" id="cb4" />
-		    <label for="cb4"><img src="{% static 'images/check.png' %}" />YouTube</label>
+		    <label for="cb4">YouTube</label>
 		  </li>
 		</ul>
 	</div>
 		<a class="btn btn-block btn-outline-purple h4-mktg plans-card-btn" href="{% url 'pay' %}">Finish paying here!</a>
-	
 </div>
 {% endblock %}

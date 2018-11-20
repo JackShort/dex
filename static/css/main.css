@@ -783,6 +783,6 @@ label img {
 
 :checked + label:before {
   content: "✓";
-  background-color: grey;
+  background-color:  #8d59ca ;
   transform: scale(1);
 }
